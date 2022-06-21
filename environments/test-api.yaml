@@ -1,0 +1,23 @@
+master:
+  config:
+    target-host: http://bd-svc-gateway.apaas-ppe1.eniot.io
+  resources:
+    limits:
+      cpu: 1500m
+      memory: 2048Mi
+    requests:
+      cpu: 1000m
+      memory: 1024Mi
+
+worker:
+  config:
+    locust-script: "/tasks/test-api.py"
+  replicaCount: 20
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 512Mi
+    requests:
+      cpu: 500m
+      memory: 256Mi
+
